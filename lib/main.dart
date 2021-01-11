@@ -59,16 +59,31 @@ class MyHomePage extends StatelessWidget {
               mainAxisSpacing: 16,
               childAspectRatio: 0.7,
             ),
-            itemCount: 6,
+            itemCount: 4,
             itemBuilder: (context, index) {
               return Container(
-                color: Colors.green,
                 margin: EdgeInsets.all(16),
+                color: Colors.grey,
               );
             }),
       );
     } else {
-      return Center(child: Text("products"));
+      return Container(
+        child: GridView.builder(
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              crossAxisSpacing: 16,
+              mainAxisSpacing: 16,
+              childAspectRatio: 0.8,
+            ),
+            itemCount: products.length,
+            itemBuilder: (context, index) {
+              return Container(
+                margin: EdgeInsets.all(5),
+                child: Image.network(products[index].sampleImageUrl),
+              );
+            }),
+      );
     }
   }
 }
