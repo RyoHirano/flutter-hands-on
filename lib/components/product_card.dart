@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hands_on/models/product.dart';
+import 'package:flutter_hands_on/pages/product_detail.dart';
 
 class ProductCard extends StatelessWidget {
   final Product product;
@@ -11,7 +12,10 @@ class ProductCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
         onTap: () async {
-          print("tap.");
+          Navigator.of(context).pushNamed(
+            ProductDetail.routeName,
+            arguments: this.product,
+          );
         },
         child: Container(
             margin: EdgeInsets.all(16),

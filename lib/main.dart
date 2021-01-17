@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 import 'package:flutter_hands_on/components/product_card.dart';
+import 'package:flutter_hands_on/pages/product_detail.dart';
 import 'package:flutter_hands_on/stores/product_list_store.dart';
 import 'package:provider/provider.dart';
 
@@ -32,6 +33,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: MyHomePage(),
+      routes: {
+        ProductDetail.routeName: (context) => ProductDetail(),
+      },
     );
   }
 }
