@@ -9,17 +9,21 @@ class ProductCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        margin: EdgeInsets.all(16),
-        child: Column(
-          children: <Widget>[
-            Image.network(product.sampleImageUrl),
-            SizedBox(
-              height: 40,
-              child: Text(product.title),
-            ),
-            AutoSizeText("${product.price.toString()}円"),
-          ],
-        ));
+    return GestureDetector(
+        onTap: () async {
+          print("tap.");
+        },
+        child: Container(
+            margin: EdgeInsets.all(16),
+            child: Column(
+              children: <Widget>[
+                Image.network(product.sampleImageUrl),
+                SizedBox(
+                  height: 40,
+                  child: Text(product.title),
+                ),
+                AutoSizeText("${product.price.toString()}円"),
+              ],
+            )));
   }
 }
